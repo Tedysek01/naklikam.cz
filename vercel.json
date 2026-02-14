@@ -1,0 +1,31 @@
+{
+  "functions": {
+    "api/claude.js": {
+      "maxDuration": 300
+    },
+    "api/claude/stream.js": {
+      "maxDuration": 300
+    },
+    "api/health.js": {
+      "maxDuration": 10
+    },
+    "api/webhooks/stripe.js": {
+      "maxDuration": 30
+    },
+    "api/stripe/create-checkout-session.js": {
+      "maxDuration": 30
+    },
+    "api/stripe/create-portal-session.js": {
+      "maxDuration": 30
+    },
+    "api/stripe/sync-subscription.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

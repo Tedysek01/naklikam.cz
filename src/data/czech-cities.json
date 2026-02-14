@@ -1,0 +1,632 @@
+[
+  {
+    "name": "Praha",
+    "region": "Praha",
+    "population": 1309000,
+    "type": "krajské město",
+    "slug": "praha",
+    "searchVolume": "high",
+    "priority": "high"
+  },
+  {
+    "name": "Brno",
+    "region": "Jihomoravský kraj",
+    "population": 381000,
+    "type": "krajské město",
+    "slug": "brno",
+    "searchVolume": "medium-high",
+    "priority": "high"
+  },
+  {
+    "name": "Ostrava",
+    "region": "Moravskoslezský kraj",
+    "population": 287000,
+    "type": "krajské město",
+    "slug": "ostrava",
+    "searchVolume": "medium-high",
+    "priority": "high"
+  },
+  {
+    "name": "Plzeň",
+    "region": "Plzeňský kraj",
+    "population": 175000,
+    "type": "krajské město",
+    "slug": "plzen",
+    "searchVolume": "medium-high",
+    "priority": "high"
+  },
+  {
+    "name": "Liberec",
+    "region": "Liberecký kraj",
+    "population": 104000,
+    "type": "krajské město",
+    "slug": "liberec",
+    "searchVolume": "medium-high",
+    "priority": "high"
+  },
+  {
+    "name": "Olomouc",
+    "region": "Olomoucký kraj",
+    "population": 100000,
+    "type": "krajské město",
+    "slug": "olomouc",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "České Budějovice",
+    "region": "Jihočeský kraj",
+    "population": 93000,
+    "type": "krajské město",
+    "slug": "ceske-budejovice",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Hradec Králové",
+    "region": "Královéhradecký kraj",
+    "population": 92000,
+    "type": "krajské město",
+    "slug": "hradec-kralove",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Ústí nad Labem",
+    "region": "Ústecký kraj",
+    "population": 92000,
+    "type": "krajské město",
+    "slug": "usti-nad-labem",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Pardubice",
+    "region": "Pardubický kraj",
+    "population": 91000,
+    "type": "krajské město",
+    "slug": "pardubice",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Zlín",
+    "region": "Zlínský kraj",
+    "population": 74000,
+    "type": "krajské město",
+    "slug": "zlin",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Havířov",
+    "region": "Moravskoslezský kraj",
+    "population": 70000,
+    "type": "město",
+    "slug": "havirov",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Kladno",
+    "region": "Středočeský kraj",
+    "population": 68000,
+    "type": "město",
+    "slug": "kladno",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Most",
+    "region": "Ústecký kraj",
+    "population": 64000,
+    "type": "město",
+    "slug": "most",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Frýdek-Místek",
+    "region": "Moravskoslezský kraj",
+    "population": 56000,
+    "type": "město",
+    "slug": "frydek-mistek",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Opava",
+    "region": "Moravskoslezský kraj",
+    "population": 55000,
+    "type": "město",
+    "slug": "opava",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Karviná",
+    "region": "Moravskoslezský kraj",
+    "population": 52000,
+    "type": "město",
+    "slug": "karvina",
+    "searchVolume": "medium",
+    "priority": "medium"
+  },
+  {
+    "name": "Jihlava",
+    "region": "Vysočina",
+    "population": 51000,
+    "type": "krajské město",
+    "slug": "jihlava",
+    "searchVolume": "medium",
+    "priority": "high"
+  },
+  {
+    "name": "Děčín",
+    "region": "Ústecký kraj",
+    "population": 48000,
+    "type": "město",
+    "slug": "decin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Teplice",
+    "region": "Ústecký kraj",
+    "population": 48000,
+    "type": "město",
+    "slug": "teplice",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Chomutov",
+    "region": "Ústecký kraj",
+    "population": 48000,
+    "type": "město",
+    "slug": "chomutov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Karlovy Vary",
+    "region": "Karlovarský kraj",
+    "population": 47000,
+    "type": "krajské město",
+    "slug": "karlovy-vary",
+    "searchVolume": "medium-low",
+    "priority": "high"
+  },
+  {
+    "name": "Jablonec nad Nisou",
+    "region": "Liberecký kraj",
+    "population": 45000,
+    "type": "město",
+    "slug": "jablonec-nad-nisou",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Mladá Boleslav",
+    "region": "Středočeský kraj",
+    "population": 44000,
+    "type": "město",
+    "slug": "mlada-boleslav",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Prostějov",
+    "region": "Olomoucký kraj",
+    "population": 44000,
+    "type": "město",
+    "slug": "prostejov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Přerov",
+    "region": "Olomoucký kraj",
+    "population": 42000,
+    "type": "město",
+    "slug": "prerov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Česká Lípa",
+    "region": "Liberecký kraj",
+    "population": 36000,
+    "type": "město",
+    "slug": "ceska-lipa",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Třebíč",
+    "region": "Vysočina",
+    "population": 35000,
+    "type": "město",
+    "slug": "trebic",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Třinec",
+    "region": "Moravskoslezský kraj",
+    "population": 35000,
+    "type": "město",
+    "slug": "trinec",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Tábor",
+    "region": "Jihočeský kraj",
+    "population": 34000,
+    "type": "město",
+    "slug": "tabor",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Znojmo",
+    "region": "Jihomoravský kraj",
+    "population": 34000,
+    "type": "město",
+    "slug": "znojmo",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Příbram",
+    "region": "Středočeský kraj",
+    "population": 33000,
+    "type": "město",
+    "slug": "pribram",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Cheb",
+    "region": "Karlovarský kraj",
+    "population": 32000,
+    "type": "město",
+    "slug": "cheb",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Kolín",
+    "region": "Středočeský kraj",
+    "population": 31000,
+    "type": "město",
+    "slug": "kolin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Trutnov",
+    "region": "Královéhradecký kraj",
+    "population": 30000,
+    "type": "město",
+    "slug": "trutnov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Orlová",
+    "region": "Moravskoslezský kraj",
+    "population": 29000,
+    "type": "město",
+    "slug": "orlova",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Písek",
+    "region": "Jihočeský kraj",
+    "population": 29000,
+    "type": "město",
+    "slug": "pisek",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Otrokovice",
+    "region": "Zlínský kraj",
+    "population": 28000,
+    "type": "město",
+    "slug": "otrokovice",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Vsetín",
+    "region": "Zlínský kraj",
+    "population": 26000,
+    "type": "město",
+    "slug": "vsetin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Hodonín",
+    "region": "Jihomoravský kraj",
+    "population": 25000,
+    "type": "město",
+    "slug": "hodonin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Český Těšín",
+    "region": "Moravskoslezský kraj",
+    "population": 24000,
+    "type": "město",
+    "slug": "cesky-tesin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Břeclav",
+    "region": "Jihomoravský kraj",
+    "population": 24000,
+    "type": "město",
+    "slug": "breclav",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Litvínov",
+    "region": "Ústecký kraj",
+    "population": 24000,
+    "type": "město",
+    "slug": "litvinov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Nový Jičín",
+    "region": "Moravskoslezský kraj",
+    "population": 23000,
+    "type": "město",
+    "slug": "novy-jicin",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Kopřivnice",
+    "region": "Moravskoslezský kraj",
+    "population": 22000,
+    "type": "město",
+    "slug": "koprivnice",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Sokolov",
+    "region": "Karlovarský kraj",
+    "population": 22000,
+    "type": "město",
+    "slug": "sokolov",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Strakonice",
+    "region": "Jihočeský kraj",
+    "population": 22000,
+    "type": "město",
+    "slug": "strakonice",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Žďár nad Sázavou",
+    "region": "Vysočina",
+    "population": 21000,
+    "type": "město",
+    "slug": "zdar-nad-sazavou",
+    "searchVolume": "medium-low",
+    "priority": "medium-low"
+  },
+  {
+    "name": "Náchod",
+    "region": "Královéhradecký kraj",
+    "population": 20000,
+    "type": "město",
+    "slug": "nachod",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Beroun",
+    "region": "Středočeský kraj",
+    "population": 20000,
+    "type": "město",
+    "slug": "beroun",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Brandýs nad Labem",
+    "region": "Středočeský kraj",
+    "population": 19000,
+    "type": "město",
+    "slug": "brandys-nad-labem",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Říčany",
+    "region": "Středočeský kraj",
+    "population": 19000,
+    "type": "město",
+    "slug": "ricany",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Mělník",
+    "region": "Středočeský kraj",
+    "population": 19000,
+    "type": "město",
+    "slug": "melnik",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Brandýs nad Labem-Stará Boleslav",
+    "region": "Středočeský kraj",
+    "population": 19000,
+    "type": "město",
+    "slug": "brandys-nad-labem-stara-boleslav",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Hranice",
+    "region": "Olomoucký kraj",
+    "population": 18000,
+    "type": "město",
+    "slug": "hranice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Kralupy nad Vltavou",
+    "region": "Středočeský kraj",
+    "population": 18000,
+    "type": "město",
+    "slug": "kralupy-nad-vltavou",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Svitavy",
+    "region": "Pardubický kraj",
+    "population": 16000,
+    "type": "město",
+    "slug": "svitavy",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Benešov",
+    "region": "Středočeský kraj",
+    "population": 16000,
+    "type": "město",
+    "slug": "benesov",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Slaný",
+    "region": "Středočeský kraj",
+    "population": 16000,
+    "type": "město",
+    "slug": "slany",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Neratovice",
+    "region": "Středočeský kraj",
+    "population": 16000,
+    "type": "město",
+    "slug": "neratovice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Nymburk",
+    "region": "Středočeský kraj",
+    "population": 15000,
+    "type": "město",
+    "slug": "nymburk",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Poděbrady",
+    "region": "Středočeský kraj",
+    "population": 13000,
+    "type": "město",
+    "slug": "podebrady",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Čelákovice",
+    "region": "Středočeský kraj",
+    "population": 11000,
+    "type": "město",
+    "slug": "celakovice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Čáslav",
+    "region": "Středočeský kraj",
+    "population": 10000,
+    "type": "město",
+    "slug": "caslav",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Lysá nad Labem",
+    "region": "Středočeský kraj",
+    "population": 9000,
+    "type": "město",
+    "slug": "lysa-nad-labem",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Hostivice",
+    "region": "Středočeský kraj",
+    "population": 8000,
+    "type": "město",
+    "slug": "hostivice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Jesenice",
+    "region": "Středočeský kraj",
+    "population": 8000,
+    "type": "město",
+    "slug": "jesenice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Černošice",
+    "region": "Středočeský kraj",
+    "population": 7000,
+    "type": "město",
+    "slug": "cernosice",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Unhošť",
+    "region": "Středočeský kraj",
+    "population": 3000,
+    "type": "obec",
+    "slug": "unhost",
+    "searchVolume": "low",
+    "priority": "low"
+  },
+  {
+    "name": "Rudná",
+    "region": "Středočeský kraj",
+    "population": 3000,
+    "type": "obec",
+    "slug": "rudna",
+    "searchVolume": "low",
+    "priority": "low"
+  }
+]

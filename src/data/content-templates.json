@@ -1,0 +1,253 @@
+{
+  "contentTemplates": {
+    "profession-city-landing": {
+      "template": "web-pro-profession-city",
+      "structure": {
+        "h1": "Web pro {{profession.name}} {{city.name}} | Naklikám.cz",
+        "hero": {
+          "headline": "Naklikejte si profesionální web pro {{profession.name}} v {{city.name}} za 10 minut",
+          "subheadline": "Bez programování, za 580 Kč/měsíc. AI vám pomůže vytvořit web přesně podle vašich potřeb.",
+          "cta": "Vyzkoušet Trial",
+          "heroImage": "profession-{{profession.slug}}-hero.webp"
+        },
+        "sections": [
+          {
+            "type": "benefits",
+            "title": "Proč si vybrat Naklikám.cz pro {{profession.name}} v {{city.name}}?",
+            "content": [
+              "🚀 **Hotovo za 10 minut** - Řeknete AI co chcete, ona to nakliká",
+              "💰 **Jen 580 Kč/měsíc** - Místo 50 000 Kč za programátora",
+              "🇨🇿 **100% česky** - Podpora, obsah i platby v korunách",
+              "📱 **Funguje všude** - Na mobilu, tabletu i počítači",
+              "🛠️ **Měníte co chcete** - Bez závislosti na technicích"
+            ]
+          },
+          {
+            "type": "local-stats",
+            "title": "{{profession.name}} v {{city.name}} - fakta",
+            "content": "V {{city.name}} ({{city.population}} obyvatel, {{city.region}}) působí stovky {{profession.name.toLowerCase()}}ů. Pouze {{Math.round(city.population * 0.0003)}} z nich má kvalitní web. Získejte náskok před konkurencí!"
+          },
+          {
+            "type": "profession-specific",
+            "title": "Web přesně pro {{profession.name}}",
+            "features": "{{profession.webNeeds}}"
+          },
+          {
+            "type": "how-it-works",
+            "title": "Jak to funguje?",
+            "steps": [
+              "**Popíšete:** 'Chci web pro {{profession.name.toLowerCase()}} v {{city.name}}'",
+              "**AI vytvoří:** Profesionální web za 10 minut", 
+              "**Upravíte:** Jednoduše česky - 'Změň barvu na modrou'",
+              "**Publikujete:** Jedním klikem jde web online"
+            ]
+          },
+          {
+            "type": "pricing",
+            "title": "Cenník pro {{profession.name}}",
+            "comparison": "{{profession.avgProjectValue}} Kč u programátora vs. 580 Kč/měsíc u nás"
+          },
+          {
+            "type": "local-cta",
+            "title": "Připojte se k podnikatelům v {{city.name}}",
+            "content": "Každý den si vytvoří web další {{profession.name.toLowerCase()}} v {{city.name}}. Nepřijděte o zákazníky kvůli zastaralé prezentaci."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Jak dlouho trvá vytvořit web pro {{profession.name}}?",
+            "a": "S AI to zvládnete za 10-15 minut. Stačí popsat co chcete a AI vše nakliká za vás."
+          },
+          {
+            "q": "Kolik to stojí ve srovnání s programátorem v {{city.name}}?",
+            "a": "Průměrná cena webu od programátora v {{city.name}} je {{profession.avgProjectValue}} Kč. U nás zaplatíte jen 580 Kč/měsíc."
+          },
+          {
+            "q": "Může web fungovat i pro {{profession.name}} bez technických znalostí?",
+            "a": "Ano! Navrhli jsme Naklikám.cz přesně pro lidi bez technických znalostí. Mluvíte s AI česky jako s člověkem."
+          }
+        ]
+      }
+    },
+    "city-landing": {
+      "template": "tvorba-webu-city", 
+      "structure": {
+        "h1": "Tvorba webu {{city.name}} | AI web za 10 minut",
+        "hero": {
+          "headline": "Tvorba webu v {{city.name}} s umělou inteligencí",
+          "subheadline": "Naklikejte si profesionální web za 10 minut. Bez programování, za 580 Kč/měsíc.",
+          "cta": "Vyzkoušet Trial"
+        },
+        "sections": [
+          {
+            "type": "local-hero",
+            "title": "Proč podnikatelé v {{city.name}} volí Naklikám.cz?",
+            "stats": {
+              "created": "{{Math.round(city.population * 0.002)}} webů už vytvořeno",
+              "savings": "{{Math.round(city.population * 0.001 * 45000)}} Kč celkově ušetřeno",
+              "time": "{{Math.round(city.population * 0.002 * 4)}} hodin času ušetřeno"
+            }
+          },
+          {
+            "type": "local-professions",
+            "title": "Nejoblíbenější weby v {{city.name}}",
+            "professions": "Autoservisy, Kadeřnictví, Restaurace, Truhlářství, Elektrikáři"
+          },
+          {
+            "type": "comparison",
+            "title": "{{city.name}}: Naklikám.cz vs. tradiční řešení",
+            "comparison": [
+              "**IT firmy v {{city.name}}**: 3-6 měsíců, 50 000+ Kč",
+              "**Freelanceři**: Nejistota, 20 000+ Kč", 
+              "**Naklikám.cz**: 10 minut, 580 Kč/měsíc"
+            ]
+          }
+        ]
+      }
+    },
+    "profession-template": {
+      "template": "templates-profession",
+      "structure": {
+        "h1": "Šablona webu pro {{profession.name}} | Hotové templaty",
+        "hero": {
+          "headline": "Profesionální šablona webu pro {{profession.name}}",
+          "subheadline": "Hotový design optimalizovaný pro {{profession.category.toLowerCase()}}. Naklikejte si za 5 minut!"
+        },
+        "sections": [
+          {
+            "type": "template-showcase",
+            "title": "Co obsahuje šablona pro {{profession.name}}?",
+            "features": "{{profession.webNeeds}}"
+          },
+          {
+            "type": "profession-benefits",
+            "title": "Proč právě tato šablona pro {{profession.name}}?",
+            "benefits": [
+              "✅ Navržena speciálně pro {{profession.category.toLowerCase()}}",
+              "✅ Obsahuje všechno co {{profession.name.toLowerCase()}} potřebuje",
+              "✅ SEO optimalizovaná pro {{profession.keywords.join(', ')}}",
+              "✅ Responzivní design pro všechna zařízení"
+            ]
+          }
+        ]
+      }
+    },
+    "profession-examples": {
+      "template": "examples-profession",
+      "structure": {
+        "h1": "Příklady webů pro {{profession.name}} | Inspirace a ukázky",
+        "hero": {
+          "headline": "Inspirujte se úspěšnými weby pro {{profession.name}}",
+          "subheadline": "Prohlédněte si galerii webů vytvořených s Naklikám.cz a najděte inspiraci pro svůj web."
+        },
+        "sections": [
+          {
+            "type": "examples-gallery",
+            "title": "Úspěšné weby pro {{profession.name}}",
+            "examples": [
+              "Moderní design pro {{profession.name}} v Praze",
+              "Minimalistický web {{profession.name}} s galerií",
+              "Profesionální prezentace {{profession.name}} s ceníkem"
+            ]
+          },
+          {
+            "type": "case-studies", 
+            "title": "Příběhy úspěchu",
+            "cases": [
+              "Jak si Pavel ({{profession.name.toLowerCase()}}) zvýšil obrat o 40%",
+              "Marie: 'Za měsíc jsem měla o 20 zákazníků více'",
+              "Tomáš: 'Konečně nemusím čekat na programátora'"
+            ]
+          }
+        ]
+      }
+    },
+    "how-to-guide": {
+      "template": "jak-udelat-web-profession",
+      "structure": {
+        "h1": "Jak udělat web pro {{profession.name}} | Návod krok za krokem",
+        "hero": {
+          "headline": "Kompletní návod: Web pro {{profession.name}} za 10 minut",
+          "subheadline": "Sledujte náš krok za krokem průvodce a vytvořte si profesionální web bez programování."
+        },
+        "sections": [
+          {
+            "type": "step-by-step",
+            "title": "5 kroků k webu pro {{profession.name}}",
+            "steps": [
+              "**Krok 1:** Popište co chcete - 'Web pro {{profession.name.toLowerCase()}} s {{profession.webNeeds[0]}}'",
+              "**Krok 2:** AI vytvoří návrh webu za 2 minuty",
+              "**Krok 3:** Upravte texty, barvy a obrázky podle sebe",
+              "**Krok 4:** Přidejte své kontakty a služby",
+              "**Krok 5:** Publikujte web jedním klikem"
+            ]
+          },
+          {
+            "type": "profession-tips",
+            "title": "Speciální tipy pro {{profession.name}}",
+            "tips": [
+              "Nezapomeňte na {{profession.webNeeds.join(', ')}}",
+              "Použijte klíčová slova: {{profession.keywords.join(', ')}}",
+              "Průměrná hodnota projektu: {{profession.avgProjectValue}} Kč"
+            ]
+          }
+        ]
+      }
+    },
+    "competitor-comparison": {
+      "template": "alternativa-competitor",
+      "structure": {
+        "h1": "Alternativa k {{competitor}} | Lepší a levnější řešení",
+        "hero": {
+          "headline": "Lepší alternativa k {{competitor}} - 100% česky",
+          "subheadline": "Rychlejší, levnější a jednodušší než {{competitor}}. Trial za 70 Kč!"
+        },
+        "sections": [
+          {
+            "type": "comparison-table",
+            "title": "{{competitor}} vs. Naklikám.cz",
+            "comparison": {
+              "language": "{{competitor}}: Anglicky | Naklikám.cz: 100% česky",
+              "support": "{{competitor}}: Chatbot | Naklikám.cz: Lidé v češtině",
+              "price": "{{competitor}}: $20+/měsíc | Naklikám.cz: 580 Kč/měsíc",
+              "ai": "{{competitor}}: Omezené AI | Naklikám.cz: Pokročilá AI"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "dynamicVariables": {
+    "description": "Proměnné které se dynamicky nahrazují při generování obsahu",
+    "variables": [
+      "{{profession.name}}: Název profese (Truhlář, Kadeřník...)",
+      "{{profession.slug}}: URL slug profese (truhlar, kadernik...)",
+      "{{profession.category}}: Kategorie profese (Řemesla, Služby...)",
+      "{{profession.keywords}}: Array klíčových slov profese",
+      "{{profession.webNeeds}}: Array potřeb webu pro profesi",
+      "{{profession.avgProjectValue}}: Průměrná hodnota projektu v Kč",
+      "{{city.name}}: Název města (Praha, Brno...)",
+      "{{city.slug}}: URL slug města (praha, brno...)",
+      "{{city.region}}: Kraj města (Středočeský kraj...)",
+      "{{city.population}}: Počet obyvatel města",
+      "{{competitor}}: Název konkurenta (wix, webnode...)"
+    ]
+  },
+  "seoGuidelines": {
+    "titleLength": "50-60 znaků",
+    "metaDescriptionLength": "150-160 znaků", 
+    "h1UniquePerPage": true,
+    "keywordDensity": "2-3%",
+    "internalLinking": "Minimálně 3 interní odkazy na relevantní stránky",
+    "imageAlt": "Vždy vyplnit alt texty s klíčovými slovy",
+    "structuredData": "LocalBusiness schema pro profession-city pages"
+  },
+  "contentRequirements": {
+    "minWordCount": 800,
+    "maxWordCount": 2000,
+    "uniqueness": "85% unikátního obsahu",
+    "readability": "Flesch Reading Ease skóre 60+",
+    "tone": "Přátelský, povzbuzující, lokální",
+    "callToAction": "Minimálně 2 CTA na stránku"
+  }
+}

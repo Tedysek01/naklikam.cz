@@ -1,0 +1,232 @@
+{
+  "programmaticSeoStructure": {
+    "description": "URL struktura pro programmatic SEO - založena na analýze konkurence a českých search patterns",
+    "totalPotentialPages": 15000,
+    "urlPatterns": [
+      {
+        "pattern": "/web-pro-[profession]-[city]",
+        "examples": [
+          "/web-pro-truhlar-praha",
+          "/web-pro-kadernice-brno",
+          "/web-pro-autoservis-ostrava"
+        ],
+        "targetKeywords": [
+          "web pro [profession] [city]",
+          "tvorba webu [profession] [city]",
+          "webové stránky [profession] [city]"
+        ],
+        "pageCount": 4760,
+        "priority": "high",
+        "searchIntent": "commercial",
+        "contentType": "location-profession-landing"
+      },
+      {
+        "pattern": "/tvorba-webu-[city]",
+        "examples": [
+          "/tvorba-webu-praha",
+          "/tvorba-webu-brno",
+          "/tvorba-webu-liberec"
+        ],
+        "targetKeywords": [
+          "tvorba webu [city]",
+          "web [city]",
+          "webové stránky [city]"
+        ],
+        "pageCount": 70,
+        "priority": "high",
+        "searchIntent": "commercial",
+        "contentType": "location-landing"
+      },
+      {
+        "pattern": "/templates/[profession]",
+        "examples": [
+          "/templates/truhlar",
+          "/templates/restaurace",
+          "/templates/autoservis"
+        ],
+        "targetKeywords": [
+          "šablona webu [profession]",
+          "template [profession]",
+          "vzor webu [profession]"
+        ],
+        "pageCount": 68,
+        "priority": "high", 
+        "searchIntent": "informational",
+        "contentType": "profession-template-showcase"
+      },
+      {
+        "pattern": "/examples/[profession]",
+        "examples": [
+          "/examples/kadernice",
+          "/examples/elektrikar",
+          "/examples/masaz"
+        ],
+        "targetKeywords": [
+          "příklady webů [profession]",
+          "inspirace web [profession]",
+          "ukázky webů [profession]"
+        ],
+        "pageCount": 68,
+        "priority": "medium",
+        "searchIntent": "informational",
+        "contentType": "profession-examples"
+      },
+      {
+        "pattern": "/inspiration/[category]",
+        "examples": [
+          "/inspiration/remesla",
+          "/inspiration/sluzby-krasy",
+          "/inspiration/gastronomie"
+        ],
+        "targetKeywords": [
+          "inspirace web [category]",
+          "nápady web [category]",
+          "design web [category]"
+        ],
+        "pageCount": 15,
+        "priority": "medium",
+        "searchIntent": "informational",
+        "contentType": "category-inspiration"
+      },
+      {
+        "pattern": "/jak-udelat-web-pro-[profession]",
+        "examples": [
+          "/jak-udelat-web-pro-truhlar",
+          "/jak-udelat-web-pro-restaurace",
+          "/jak-udelat-web-pro-autoservis"
+        ],
+        "targetKeywords": [
+          "jak udělat web pro [profession]",
+          "návod web [profession]",
+          "tvorba webu [profession]"
+        ],
+        "pageCount": 68,
+        "priority": "medium",
+        "searchIntent": "informational",
+        "contentType": "how-to-guide"
+      },
+      {
+        "pattern": "/cenik-webu-[profession]",
+        "examples": [
+          "/cenik-webu-truhlar",
+          "/cenik-webu-kadernice",
+          "/cenik-webu-autoservis"
+        ],
+        "targetKeywords": [
+          "cena webu [profession]",
+          "ceník web [profession]",
+          "kolik stojí web [profession]"
+        ],
+        "pageCount": 68,
+        "priority": "medium",
+        "searchIntent": "commercial",
+        "contentType": "pricing-page"
+      },
+      {
+        "pattern": "/alternativa-k-[competitor]",
+        "examples": [
+          "/alternativa-k-wix",
+          "/alternativa-k-webnode", 
+          "/alternativa-k-shoptet"
+        ],
+        "targetKeywords": [
+          "alternativa k [competitor]",
+          "[competitor] vs naklikam",
+          "lepší než [competitor]"
+        ],
+        "pageCount": 10,
+        "priority": "medium",
+        "searchIntent": "commercial",
+        "contentType": "competitor-comparison"
+      },
+      {
+        "pattern": "/levny-web-[city]",
+        "examples": [
+          "/levny-web-praha",
+          "/levny-web-brno",
+          "/levny-web-ostrava"
+        ],
+        "targetKeywords": [
+          "levný web [city]",
+          "dostupný web [city]",
+          "web za dobrou cenu [city]"
+        ],
+        "pageCount": 70,
+        "priority": "medium",
+        "searchIntent": "commercial",
+        "contentType": "budget-focused-landing"
+      },
+      {
+        "pattern": "/rychly-web-[profession]",
+        "examples": [
+          "/rychly-web-truhlar",
+          "/rychly-web-kadernice",
+          "/rychly-web-restaurace"
+        ],
+        "targetKeywords": [
+          "rychlý web [profession]",
+          "web za 10 minut [profession]",
+          "okamžitý web [profession]"
+        ],
+        "pageCount": 68,
+        "priority": "medium",
+        "searchIntent": "commercial",
+        "contentType": "speed-focused-landing"
+      }
+    ],
+    "seoConsiderations": {
+      "slugFormat": "lowercase-with-dashes",
+      "czechCharacters": "converted-to-ascii",
+      "maxSlugLength": 60,
+      "canonicalUrls": true,
+      "hreflang": "cs-CZ",
+      "breadcrumbs": true
+    },
+    "contentRequirements": {
+      "minWordCount": 800,
+      "maxWordCount": 2000,
+      "uniqueContentPercentage": 85,
+      "localKeywordDensity": "2-3%",
+      "h1TagUnique": true,
+      "metaDescriptionLength": "150-160 characters",
+      "titleLength": "50-60 characters"
+    },
+    "technicalImplementation": {
+      "framework": "Next.js with dynamic routing",
+      "ssg": "Static Site Generation for performance",
+      "isr": "Incremental Static Regeneration for updates",
+      "sitemap": "Automatic generation with priorities",
+      "robotsTxt": "Optimized for SEO crawling",
+      "structuredData": "LocalBusiness + Organization schemas"
+    },
+    "priorityMatrix": {
+      "tier1": {
+        "patterns": ["/web-pro-[profession]-[city]", "/tvorba-webu-[city]", "/templates/[profession]"],
+        "estimatedTraffic": "70% of total organic traffic",
+        "competitiveness": "medium",
+        "conversionPotential": "high"
+      },
+      "tier2": {
+        "patterns": ["/examples/[profession]", "/jak-udelat-web-pro-[profession]", "/cenik-webu-[profession]"],
+        "estimatedTraffic": "25% of total organic traffic", 
+        "competitiveness": "low-medium",
+        "conversionPotential": "medium"
+      },
+      "tier3": {
+        "patterns": ["/inspiration/[category]", "/alternativa-k-[competitor]", "/rychly-web-[profession]"],
+        "estimatedTraffic": "5% of total organic traffic",
+        "competitiveness": "low",
+        "conversionPotential": "medium-low"
+      }
+    },
+    "competitorAnalysis": {
+      "wixPatterns": ["/wix-alternative", "/wix-vs-naklikam"],
+      "webnodePatterns": ["/webnode-alternative", "/webnode-vs-naklikam"],
+      "gaps": [
+        "Chybí lokalizované stránky pro české profese",
+        "Žádná konkurence v kombinacích město + profese",
+        "Slabé pokrytí řemeslnických oborů"
+      ]
+    }
+  }
+}

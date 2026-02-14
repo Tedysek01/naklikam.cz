@@ -1,0 +1,32 @@
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon part -->
+  <g transform="translate(4, 8)">
+    <!-- Main circle background -->
+    <circle cx="16" cy="16" r="16" fill="url(#logoGradient)"/>
+    
+    <!-- Sparkles icon - main star -->
+    <path d="M16 6L18.5 15.5L28 18L18.5 20.5L16 30L13.5 20.5L4 18L13.5 15.5L16 6Z" 
+          fill="white" fill-opacity="0.95"/>
+    
+    <!-- Small accent stars -->
+    <path d="M26 10L27 12.5L29.5 13.5L27 14.5L26 17L25 14.5L22.5 13.5L25 12.5L26 10Z" 
+          fill="white" fill-opacity="0.8"/>
+    
+    <path d="M6 24L7 26.5L9.5 27.5L7 28.5L6 31L5 28.5L2.5 27.5L5 26.5L6 24Z" 
+          fill="white" fill-opacity="0.7"/>
+  </g>
+  
+  <!-- Text part -->
+  <g transform="translate(52, 0)">
+    <text x="0" y="32" font-family="Outfit, ui-sans-serif, system-ui" font-weight="700" font-size="24" fill="url(#logoGradient)">
+      Naklikam.cz
+    </text>
+  </g>
+</svg>

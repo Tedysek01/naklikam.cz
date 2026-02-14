@@ -1,0 +1,68 @@
+{
+  "totalProfessions": 68,
+  "categories": 15,
+  "highPriority": 18,
+  "avgProjectValue": 14456,
+  "topCategories": [
+    {
+      "name": "Řemesla",
+      "count": 8
+    },
+    {
+      "name": "Služby krásy",
+      "count": 8
+    },
+    {
+      "name": "Služby",
+      "count": 8
+    },
+    {
+      "name": "Zdravotnictví",
+      "count": 8
+    },
+    {
+      "name": "Gastronomie",
+      "count": 6
+    },
+    {
+      "name": "Wellness",
+      "count": 4
+    },
+    {
+      "name": "Stavebnictví",
+      "count": 4
+    },
+    {
+      "name": "Kreativní služby",
+      "count": 4
+    },
+    {
+      "name": "Sport",
+      "count": 4
+    },
+    {
+      "name": "Vzdělávání",
+      "count": 4
+    },
+    {
+      "name": "Technické služby",
+      "count": 3
+    },
+    {
+      "name": "Automotive",
+      "count": 2
+    },
+    {
+      "name": "E-commerce",
+      "count": 2
+    },
+    {
+      "name": "Obchod",
+      "count": 2
+    },
+    {
+      "name": "Neziskový sektor",
+      "count": 1
+    }
+  ]
+}

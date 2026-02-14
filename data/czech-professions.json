@@ -1,0 +1,1371 @@
+[
+  {
+    "name": "Truhlář",
+    "slug": "truhlar",
+    "category": "Řemesla",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "truhlářství",
+      "nábytek na míru",
+      "dřevařské práce"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "galerie prací",
+      "cenník služeb",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Kadeřník",
+    "slug": "kadernik",
+    "category": "Služby krásy",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "kadeřnictví",
+      "účesy",
+      "barva vlasů"
+    ],
+    "avgProjectValue": 5000,
+    "webNeeds": [
+      "galerie účesů",
+      "ceník",
+      "rezervace termínů",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Kadeřnice",
+    "slug": "kadernice",
+    "category": "Služby krásy",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "kadeřnictví",
+      "dámské účesy",
+      "barvení vlasů"
+    ],
+    "avgProjectValue": 5000,
+    "webNeeds": [
+      "galerie účesů",
+      "ceník",
+      "rezervace termínů",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Autoservis",
+    "slug": "autoservis",
+    "category": "Automotive",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "oprava aut",
+      "servis vozidel",
+      "autoopravy"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace termínů",
+      "kontakt",
+      "o nás"
+    ]
+  },
+  {
+    "name": "Restaurace",
+    "slug": "restaurace",
+    "category": "Gastronomie",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "jídlo",
+      "menu",
+      "rezervace stolu"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "menu",
+      "rezervace",
+      "galerie",
+      "kontakt",
+      "otevírací doba"
+    ]
+  },
+  {
+    "name": "Elektrikář",
+    "slug": "elektrikar",
+    "category": "Řemesla",
+    "searchVolume": "medium-high",
+    "priority": "high",
+    "keywords": [
+      "elektroinstalace",
+      "revize elektro",
+      "elektro práce"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "pohotovost"
+    ]
+  },
+  {
+    "name": "Instalatér",
+    "slug": "instalater",
+    "category": "Řemesla",
+    "searchVolume": "medium-high",
+    "priority": "high",
+    "keywords": [
+      "vodoinstalace",
+      "topení",
+      "kanalizace"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "pohotovost",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Masáž",
+    "slug": "masaz",
+    "category": "Wellness",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "masáže",
+      "relaxace",
+      "terapie"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "druhy masáží",
+      "ceník",
+      "rezervace",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Nehty",
+    "slug": "nehty",
+    "category": "Služby krásy",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "nehtová modeláž",
+      "manikúra",
+      "pedikúra"
+    ],
+    "avgProjectValue": 6000,
+    "webNeeds": [
+      "galerie prací",
+      "ceník",
+      "rezervace",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Kosmetika",
+    "slug": "kosmetika",
+    "category": "Služby krásy",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "kosmetické ošetření",
+      "pleťová péče",
+      "kosmetička"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "before/after"
+    ]
+  },
+  {
+    "name": "Účetní",
+    "slug": "ucetni",
+    "category": "Služby",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "účetnictví",
+      "daňové poradenství",
+      "mzdy"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "o firmě"
+    ]
+  },
+  {
+    "name": "Právník",
+    "slug": "pravnik",
+    "category": "Služby",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "právní služby",
+      "advokát",
+      "právní poradenství"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "oblasti práva",
+      "reference",
+      "kontakt",
+      "konzultace"
+    ]
+  },
+  {
+    "name": "Realitní makléř",
+    "slug": "realitni-makler",
+    "category": "Služby",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "realitní služby",
+      "prodej nemovitostí",
+      "pronájem"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "nabídka nemovitostí",
+      "služby",
+      "reference",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "E-shop",
+    "slug": "e-shop",
+    "category": "E-commerce",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "online obchod",
+      "internetový obchod",
+      "prodej online"
+    ],
+    "avgProjectValue": 35000,
+    "webNeeds": [
+      "katalog produktů",
+      "košík",
+      "platby",
+      "doprava",
+      "administrace"
+    ]
+  },
+  {
+    "name": "Fyzioterapie",
+    "slug": "fyzioterapie",
+    "category": "Zdravotnictví",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "fyzioterapie",
+      "rehabilitace",
+      "léčebná tělocvik"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "o terapeutovi"
+    ]
+  },
+  {
+    "name": "Psycholog",
+    "slug": "psycholog",
+    "category": "Zdravotnictví",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "psychologické poradenství",
+      "terapie",
+      "konzultace"
+    ],
+    "avgProjectValue": 18000,
+    "webNeeds": [
+      "služby",
+      "o psychologovi",
+      "kontakt",
+      "rezervace",
+      "blog"
+    ]
+  },
+  {
+    "name": "Jóga",
+    "slug": "joga",
+    "category": "Wellness",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "jóga",
+      "meditace",
+      "lekce jógy"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "rozvrh lekcí",
+      "ceník",
+      "o instruktorovi",
+      "kontakt",
+      "rezervace"
+    ]
+  },
+  {
+    "name": "IT služby",
+    "slug": "it-sluzby",
+    "category": "Technické služby",
+    "searchVolume": "high",
+    "priority": "high",
+    "keywords": [
+      "IT podpora",
+      "oprava počítačů",
+      "instalace software"
+    ],
+    "avgProjectValue": 18000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "pohotovost",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Truhlář - služby",
+    "slug": "truhlar-sluzby",
+    "category": "Řemesla",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "truhlářství",
+      "nábytek na míru",
+      "dřevařské práce",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "galerie prací",
+      "cenník služeb",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Kadeřník - služby",
+    "slug": "kadernik-sluzby",
+    "category": "Služby krásy",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "kadeřnictví",
+      "účesy",
+      "barva vlasů",
+      "služby"
+    ],
+    "avgProjectValue": 5000,
+    "webNeeds": [
+      "galerie účesů",
+      "ceník",
+      "rezervace termínů",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Kadeřnice - služby",
+    "slug": "kadernice-sluzby",
+    "category": "Služby krásy",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "kadeřnictví",
+      "dámské účesy",
+      "barvení vlasů",
+      "služby"
+    ],
+    "avgProjectValue": 5000,
+    "webNeeds": [
+      "galerie účesů",
+      "ceník",
+      "rezervace termínů",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Autoservis - služby",
+    "slug": "autoservis-sluzby",
+    "category": "Automotive",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "oprava aut",
+      "servis vozidel",
+      "autoopravy",
+      "služby"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace termínů",
+      "kontakt",
+      "o nás"
+    ]
+  },
+  {
+    "name": "Restaurace - služby",
+    "slug": "restaurace-sluzby",
+    "category": "Gastronomie",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "jídlo",
+      "menu",
+      "rezervace stolu",
+      "služby"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "menu",
+      "rezervace",
+      "galerie",
+      "kontakt",
+      "otevírací doba"
+    ]
+  },
+  {
+    "name": "Elektrikář - služby",
+    "slug": "elektrikar-sluzby",
+    "category": "Řemesla",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "elektroinstalace",
+      "revize elektro",
+      "elektro práce",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "pohotovost"
+    ]
+  },
+  {
+    "name": "Instalatér - služby",
+    "slug": "instalater-sluzby",
+    "category": "Řemesla",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "vodoinstalace",
+      "topení",
+      "kanalizace",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "pohotovost",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Zedník",
+    "slug": "zednik",
+    "category": "Stavebnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "zednictví",
+      "stavební práce",
+      "rekonstrukce"
+    ],
+    "avgProjectValue": 30000,
+    "webNeeds": [
+      "galerie prací",
+      "služby",
+      "reference",
+      "kontakt",
+      "ceník"
+    ]
+  },
+  {
+    "name": "Zedník - služby",
+    "slug": "zednik-sluzby",
+    "category": "Stavebnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "zednictví",
+      "stavební práce",
+      "rekonstrukce",
+      "služby"
+    ],
+    "avgProjectValue": 30000,
+    "webNeeds": [
+      "galerie prací",
+      "služby",
+      "reference",
+      "kontakt",
+      "ceník"
+    ]
+  },
+  {
+    "name": "Malíř",
+    "slug": "malir",
+    "category": "Řemesla",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "malířské práce",
+      "natírání",
+      "tapetování"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "galerie prací",
+      "ceník",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Malíř - služby",
+    "slug": "malir-sluzby",
+    "category": "Řemesla",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "malířské práce",
+      "natírání",
+      "tapetování",
+      "služby"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "galerie prací",
+      "ceník",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Pokrývač",
+    "slug": "pokryvac",
+    "category": "Stavebnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "pokrývačské práce",
+      "střechy",
+      "krytina"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "galerie prací",
+      "služby",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Pokrývač - služby",
+    "slug": "pokryvac-sluzby",
+    "category": "Stavebnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "pokrývačské práce",
+      "střechy",
+      "krytina",
+      "služby"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "galerie prací",
+      "služby",
+      "kontakt",
+      "reference"
+    ]
+  },
+  {
+    "name": "Masáž - služby",
+    "slug": "masaz-sluzby",
+    "category": "Wellness",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "masáže",
+      "relaxace",
+      "terapie",
+      "služby"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "druhy masáží",
+      "ceník",
+      "rezervace",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Nehty - služby",
+    "slug": "nehty-sluzby",
+    "category": "Služby krásy",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "nehtová modeláž",
+      "manikúra",
+      "pedikúra",
+      "služby"
+    ],
+    "avgProjectValue": 6000,
+    "webNeeds": [
+      "galerie prací",
+      "ceník",
+      "rezervace",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Kosmetika - služby",
+    "slug": "kosmetika-sluzby",
+    "category": "Služby krásy",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "kosmetické ošetření",
+      "pleťová péče",
+      "kosmetička",
+      "služby"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "before/after"
+    ]
+  },
+  {
+    "name": "Účetní - služby",
+    "slug": "ucetni-sluzby",
+    "category": "Služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "účetnictví",
+      "daňové poradenství",
+      "mzdy",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "o firmě"
+    ]
+  },
+  {
+    "name": "Právník - služby",
+    "slug": "pravnik-sluzby",
+    "category": "Služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "právní služby",
+      "advokát",
+      "právní poradenství",
+      "služby"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "oblasti práva",
+      "reference",
+      "kontakt",
+      "konzultace"
+    ]
+  },
+  {
+    "name": "Realitní makléř - služby",
+    "slug": "realitni-makler-sluzby",
+    "category": "Služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "realitní služby",
+      "prodej nemovitostí",
+      "pronájem",
+      "služby"
+    ],
+    "avgProjectValue": 25000,
+    "webNeeds": [
+      "nabídka nemovitostí",
+      "služby",
+      "reference",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Fotografka",
+    "slug": "fotografka",
+    "category": "Kreativní služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "focení",
+      "portrétní fotografie",
+      "svatební fotografie"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "portfolio",
+      "ceník",
+      "kontakt",
+      "rezervace termínu"
+    ]
+  },
+  {
+    "name": "Fotografka - služby",
+    "slug": "fotografka-sluzby",
+    "category": "Kreativní služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "focení",
+      "portrétní fotografie",
+      "svatební fotografie",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "portfolio",
+      "ceník",
+      "kontakt",
+      "rezervace termínu"
+    ]
+  },
+  {
+    "name": "Fotograf",
+    "slug": "fotograf",
+    "category": "Kreativní služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "focení",
+      "svatební fotografie",
+      "portrétní fotografie"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "portfolio",
+      "ceník",
+      "kontakt",
+      "rezervace termínu"
+    ]
+  },
+  {
+    "name": "Fotograf - služby",
+    "slug": "fotograf-sluzby",
+    "category": "Kreativní služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "focení",
+      "svatební fotografie",
+      "portrétní fotografie",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "portfolio",
+      "ceník",
+      "kontakt",
+      "rezervace termínu"
+    ]
+  },
+  {
+    "name": "E-shop - služby",
+    "slug": "e-shop-sluzby",
+    "category": "E-commerce",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "online obchod",
+      "internetový obchod",
+      "prodej online",
+      "služby"
+    ],
+    "avgProjectValue": 35000,
+    "webNeeds": [
+      "katalog produktů",
+      "košík",
+      "platby",
+      "doprava",
+      "administrace"
+    ]
+  },
+  {
+    "name": "Květinářství",
+    "slug": "kvetinarstvi",
+    "category": "Obchod",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "květiny",
+      "kytice",
+      "donáška květin"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "nabídka květin",
+      "galerie",
+      "objednávky",
+      "kontakt",
+      "donáška"
+    ]
+  },
+  {
+    "name": "Květinářství - služby",
+    "slug": "kvetinarstvi-sluzby",
+    "category": "Obchod",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "květiny",
+      "kytice",
+      "donáška květin",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "nabídka květin",
+      "galerie",
+      "objednávky",
+      "kontakt",
+      "donáška"
+    ]
+  },
+  {
+    "name": "Cukrárna",
+    "slug": "cukrarna",
+    "category": "Gastronomie",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "dorty",
+      "zákusky",
+      "cukrářské výrobky"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "nabídka produktů",
+      "galerie",
+      "objednávky",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Cukrárna - služby",
+    "slug": "cukrarna-sluzby",
+    "category": "Gastronomie",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "dorty",
+      "zákusky",
+      "cukrářské výrobky",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "nabídka produktů",
+      "galerie",
+      "objednávky",
+      "kontakt"
+    ]
+  },
+  {
+    "name": "Pekárna",
+    "slug": "pekarna",
+    "category": "Gastronomie",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "čerstvé pečivo",
+      "chleba",
+      "rohlíky"
+    ],
+    "avgProjectValue": 10000,
+    "webNeeds": [
+      "nabídka produktů",
+      "otevírací doba",
+      "kontakt",
+      "akce"
+    ]
+  },
+  {
+    "name": "Pekárna - služby",
+    "slug": "pekarna-sluzby",
+    "category": "Gastronomie",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "čerstvé pečivo",
+      "chleba",
+      "rohlíky",
+      "služby"
+    ],
+    "avgProjectValue": 10000,
+    "webNeeds": [
+      "nabídka produktů",
+      "otevírací doba",
+      "kontakt",
+      "akce"
+    ]
+  },
+  {
+    "name": "Dentální hygiena",
+    "slug": "dentalni-hygiena",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "dentální hygiena",
+      "čištění zubů",
+      "prevence"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "o službě"
+    ]
+  },
+  {
+    "name": "Dentální hygiena - služby",
+    "slug": "dentalni-hygiena-sluzby",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "dentální hygiena",
+      "čištění zubů",
+      "prevence",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "o službě"
+    ]
+  },
+  {
+    "name": "Fyzioterapie - služby",
+    "slug": "fyzioterapie-sluzby",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "fyzioterapie",
+      "rehabilitace",
+      "léčebná tělocvik",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "rezervace",
+      "kontakt",
+      "o terapeutovi"
+    ]
+  },
+  {
+    "name": "Psycholog - služby",
+    "slug": "psycholog-sluzby",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "psychologické poradenství",
+      "terapie",
+      "konzultace",
+      "služby"
+    ],
+    "avgProjectValue": 18000,
+    "webNeeds": [
+      "služby",
+      "o psychologovi",
+      "kontakt",
+      "rezervace",
+      "blog"
+    ]
+  },
+  {
+    "name": "Veterinář",
+    "slug": "veterinar",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "veterinární služby",
+      "ošetření zvířat",
+      "pohotovost"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "pohotovost",
+      "kontakt",
+      "o klinice"
+    ]
+  },
+  {
+    "name": "Veterinář - služby",
+    "slug": "veterinar-sluzby",
+    "category": "Zdravotnictví",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "veterinární služby",
+      "ošetření zvířat",
+      "pohotovost",
+      "služby"
+    ],
+    "avgProjectValue": 20000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "pohotovost",
+      "kontakt",
+      "o klinice"
+    ]
+  },
+  {
+    "name": "Fitness trenér",
+    "slug": "fitness-trener",
+    "category": "Sport",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "osobní trenér",
+      "fitness",
+      "hubnutí"
+    ],
+    "avgProjectValue": 10000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "o trenérovi"
+    ]
+  },
+  {
+    "name": "Fitness trenér - služby",
+    "slug": "fitness-trener-sluzby",
+    "category": "Sport",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "osobní trenér",
+      "fitness",
+      "hubnutí",
+      "služby"
+    ],
+    "avgProjectValue": 10000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "reference",
+      "kontakt",
+      "o trenérovi"
+    ]
+  },
+  {
+    "name": "Sportovní klub",
+    "slug": "sportovni-klub",
+    "category": "Sport",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "sportovní kluby",
+      "fotbal",
+      "tenis",
+      "hokej"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "o klubu",
+      "tým",
+      "výsledky",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Sportovní klub - služby",
+    "slug": "sportovni-klub-sluzby",
+    "category": "Sport",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "sportovní kluby",
+      "fotbal",
+      "tenis",
+      "hokej",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "o klubu",
+      "tým",
+      "výsledky",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Jóga - služby",
+    "slug": "joga-sluzby",
+    "category": "Wellness",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "jóga",
+      "meditace",
+      "lekce jógy",
+      "služby"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "rozvrh lekcí",
+      "ceník",
+      "o instruktorovi",
+      "kontakt",
+      "rezervace"
+    ]
+  },
+  {
+    "name": "Oprava telefonů",
+    "slug": "oprava-telefonu",
+    "category": "Technické služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "oprava mobilů",
+      "výměna displeje",
+      "servis telefonů"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "kontakt",
+      "záruky",
+      "poradna"
+    ]
+  },
+  {
+    "name": "Oprava telefonů - služby",
+    "slug": "oprava-telefonu-sluzby",
+    "category": "Technické služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "oprava mobilů",
+      "výměna displeje",
+      "servis telefonů",
+      "služby"
+    ],
+    "avgProjectValue": 8000,
+    "webNeeds": [
+      "služby",
+      "ceník",
+      "kontakt",
+      "záruky",
+      "poradna"
+    ]
+  },
+  {
+    "name": "Koučink",
+    "slug": "koucink",
+    "category": "Služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "life coach",
+      "osobní rozvoj",
+      "koučování"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "o koučovi",
+      "blog",
+      "kontakt",
+      "konzultace"
+    ]
+  },
+  {
+    "name": "Koučink - služby",
+    "slug": "koucink-sluzby",
+    "category": "Služby",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "life coach",
+      "osobní rozvoj",
+      "koučování",
+      "služby"
+    ],
+    "avgProjectValue": 15000,
+    "webNeeds": [
+      "služby",
+      "o koučovi",
+      "blog",
+      "kontakt",
+      "konzultace"
+    ]
+  },
+  {
+    "name": "Lektorka",
+    "slug": "lektorka",
+    "category": "Vzdělávání",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "lekce",
+      "kurzy",
+      "školení"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "kurzy",
+      "o lektorce",
+      "reference",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Lektorka - služby",
+    "slug": "lektorka-sluzby",
+    "category": "Vzdělávání",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "lekce",
+      "kurzy",
+      "školení",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "kurzy",
+      "o lektorce",
+      "reference",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Lektor",
+    "slug": "lektor",
+    "category": "Vzdělávání",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "školení",
+      "kurzy",
+      "workshopy"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "kurzy",
+      "o lektorovi",
+      "reference",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Lektor - služby",
+    "slug": "lektor-sluzby",
+    "category": "Vzdělávání",
+    "searchVolume": "medium",
+    "priority": "medium",
+    "keywords": [
+      "školení",
+      "kurzy",
+      "workshopy",
+      "služby"
+    ],
+    "avgProjectValue": 12000,
+    "webNeeds": [
+      "kurzy",
+      "o lektorovi",
+      "reference",
+      "kontakt",
+      "registrace"
+    ]
+  },
+  {
+    "name": "Nezisková organizace",
+    "slug": "neziskova-organizace",
+    "category": "Neziskový sektor",
+    "searchVolume": "low",
+    "priority": "medium",
+    "keywords": [
+      "neziskovka",
+      "charita",
+      "dobročinnost"
+    ],
+    "avgProjectValue": 5000,
+    "webNeeds": [
+      "o organizaci",
+      "projekty",
+      "jak pomoci",
+      "kontakt",
+      "transparentnost"
+    ]
+  }
+]

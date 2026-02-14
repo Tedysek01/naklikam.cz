@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Naklikam Sandbox</title>
+  <style>body { margin: 0; }</style>
+</head>
+<body>
+<script type="module">
+  // Sandbox orchestration page for cross-origin preview isolation.
+  // Receives VFS snapshot from parent, runs ViteDevServer + ServiceWorker here.
+
+  function sendToParent(message) {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage(message, '*');
+    }
+  }
+
+  let VirtualFS, ViteDevServer, getServerBridge;
+
+  try {
+    const mod = await import('./almostnode.bundle.js');
+    VirtualFS = mod.VirtualFS;
+    ViteDevServer = mod.ViteDevServer;
+    getServerBridge = mod.getServerBridge;
+  } catch (err) {
+    console.error('[Sandbox] Failed to load almostnode:', err);
+    sendToParent({ type: 'devServerError', error: 'Failed to load almostnode: ' + String(err) });
+    throw err;
+  }
+
+  let vfs = null;
+  let bridge = null;
+  let viteServer = null;
+
+  async function handleInit(data) {
+    try {
+      console.log('[Sandbox] handleInit: creating VFS from snapshot...');
+      // Reconstruct VFS from snapshot
+      vfs = VirtualFS.fromSnapshot(data.vfsSnapshot);
+      console.log('[Sandbox] handleInit: VFS created');
+
+      // Initialize ServerBridge + Service Worker on this origin
+      console.log('[Sandbox] handleInit: initializing ServerBridge + SW...');
+      bridge = getServerBridge();
+
+      // Helper: set up MessageChannel with the current SW controller
+      const setupMessageChannel = () => {
+        const mc = new MessageChannel();
+        mc.port1.onmessage = bridge.handleServiceWorkerMessage.bind(bridge);
+        navigator.serviceWorker.controller.postMessage(
+          { type: 'init', port: mc.port2 }, [mc.port2]
+        );
+        bridge.messageChannel = mc;
+        bridge.serviceWorkerReady = true;
+      };
+
+      if (navigator.serviceWorker.controller) {
+        // SW already controlling this origin (from a previous session or page load).
+        // In cross-origin iframes, register()/unregister() can hang, so bypass
+        // initServiceWorker() and set up the MessageChannel directly.
+        console.log('[Sandbox] SW already controlling, setting up MessageChannel directly');
+
+        // CRITICAL: Update the SW script before proceeding. The old SW may intercept
+        // cross-origin requests (esm.sh CDN) and break the preview.
+        // reg.update() works in cross-origin iframes (unlike register()).
+        try {
+          const reg = await navigator.serviceWorker.ready;
+          console.log('[Sandbox] Triggering SW update...');
+          // Race with timeout in case update() hangs in cross-origin iframe
+          await Promise.race([
+            reg.update(),
+            new Promise((_, rej) => setTimeout(() => rej(new Error('update timeout')), 5000))
+          ]);
+          console.log('[Sandbox] SW update check done');
+
+          // If a new SW installed (skipWaiting activates it immediately),
+          // wait for it to take control.
+          if (reg.installing || reg.waiting) {
+            console.log('[Sandbox] New SW detected, waiting for activation...');
+            await new Promise(resolve => {
+              navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
+              setTimeout(resolve, 5000); // Safety timeout
+            });
+            console.log('[Sandbox] New SW activated');
+          }
+        } catch (err) {
+          console.warn('[Sandbox] SW update failed (continuing with existing):', err);
+        }
+
+        setupMessageChannel();
+
+        // Re-init listener for SW restarts
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (navigator.serviceWorker.controller) setupMessageChannel();
+        });
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          if (event.data?.type === 'sw-needs-init' && navigator.serviceWorker.controller) {
+            setupMessageChannel();
+          }
+        });
+
+        // Keepalive to prevent SW idle termination
+        setInterval(() => {
+          if (bridge.messageChannel) bridge.messageChannel.port1.postMessage({ type: 'keepalive' });
+        }, 20000);
+
+        console.log('[Sandbox] handleInit: SW bridge ready (fast path)');
+      } else {
+        // No controller yet — first-ever visit, use normal init
+        console.log('[Sandbox] No SW controller, using bridge.initServiceWorker()...');
+        await bridge.initServiceWorker();
+        console.log('[Sandbox] handleInit: SW initialized (normal path)');
+      }
+
+      // Ensure the service worker is fully controlling this origin before proceeding.
+      // Without this, the preview iframe may load before the SW can intercept requests.
+      if (navigator.serviceWorker.controller === null) {
+        await new Promise(resolve => {
+          navigator.serviceWorker.addEventListener('controllerchange', resolve, { once: true });
+          // Safety timeout
+          setTimeout(resolve, 3000);
+        });
+      }
+
+      sendToParent({ type: 'initComplete' });
+    } catch (err) {
+      console.error('[Sandbox] Init failed:', err);
+      sendToParent({ type: 'devServerError', id: data.id, error: String(err) });
+    }
+  }
+
+  async function handleStartDevServer(data) {
+    try {
+      // Stop existing server if any
+      if (viteServer) {
+        viteServer.stop();
+        bridge.unregisterServer(data.port);
+        viteServer = null;
+      }
+
+      const port = data.port || 5173;
+      const root = data.root || '/app';
+
+      viteServer = new ViteDevServer(vfs, { port, root });
+
+      // Wrap handleRequest to:
+      // 1. Resolve extensionless imports (e.g. ./App → ./App.tsx)
+      // 2. Ensure import map comes before module scripts in HTML responses
+      const origHandleRequest = viteServer.handleRequest.bind(viteServer);
+      viteServer.handleRequest = async function(method, url, headers, body) {
+        // Intercept Tailwind CSS virtual modules — return empty CSS module
+        // (actual Tailwind processing is handled by the CDN play script in HTML)
+        if (url.startsWith('/__virtual__/tailwindcss/')) {
+          const mod = '// Tailwind CSS handled by CDN play script\nexport default "";\n';
+          const buf = Buffer.from(mod);
+          return { statusCode: 200, statusMessage: 'OK', headers: { 'Content-Type': 'application/javascript; charset=utf-8', 'Content-Length': String(buf.length), 'Cache-Control': 'no-cache' }, body: buf };
+        }
+
+        let resp = await origHandleRequest(method, url, headers, body);
+
+        // 1. Extension resolution — ViteDevServer only tries .html
+        //    IMPORTANT: set resp (don't return) so JS rewriting below still runs.
+        if (resp.statusCode === 404) {
+          const pathname = url.split('?')[0].split('#')[0];
+          if (!pathname.includes('.') || pathname.endsWith('/')) {
+            for (const ext of ['.tsx', '.ts', '.jsx', '.js']) {
+              const extResp = await origHandleRequest(method, url + ext, headers, body);
+              if (extResp.statusCode !== 404) { resp = extResp; break; }
+            }
+            if (resp.statusCode === 404) {
+              for (const ext of ['.tsx', '.ts', '.jsx', '.js']) {
+                const idxResp = await origHandleRequest(method, url + '/index' + ext, headers, body);
+                if (idxResp.statusCode !== 404) { resp = idxResp; break; }
+              }
+            }
+          }
+
+          // ESM CDN proxy — the old SW incorrectly intercepts cross-origin esm.sh
+          // requests and routes them here. Proxy to esm.sh for any path that looks
+          // like an npm package (not a source file). The fetch() from the sandbox
+          // page context bypasses the SW (sandbox page isn't in /__virtual__/ context).
+          const isSourcePath = pathname.startsWith('/src/') || pathname.startsWith('/app/') ||
+            pathname.startsWith('/node_modules/') || pathname.startsWith('/__');
+          if (!isSourcePath) {
+            try {
+              const esmUrl = 'https://esm.sh' + url;
+              console.log('[Sandbox] Proxying CDN request:', esmUrl);
+              const fetchResp = await fetch(esmUrl);
+              const respBody = Buffer.from(await fetchResp.arrayBuffer());
+              const respHeaders = {};
+              fetchResp.headers.forEach((v, k) => { respHeaders[k] = v; });
+              return { statusCode: fetchResp.status, statusMessage: fetchResp.statusText, headers: respHeaders, body: respBody };
+            } catch (proxyErr) {
+              console.warn('[Sandbox] ESM proxy failed:', proxyErr);
+            }
+          }
+        }
+
+        // 2. Rewrite bare specifiers in JS responses to absolute esm.sh URLs.
+        //    ViteDevServer's esbuild transform leaves bare specifiers (e.g. "react/jsx-runtime")
+        //    that normally rely on the HTML import map. Rewriting them here makes the code
+        //    self-contained and avoids import map ordering issues + SW cross-origin interception.
+        const ct = resp.headers?.['Content-Type'] || '';
+        if (resp.statusCode === 200 && ct.includes('javascript') && resp.body) {
+          let code = resp.body.toString('utf-8');
+          let changed = false;
+          // a) Resolve @/ path alias → /src/ (TypeScript paths: "@/*" → "src/*")
+          if (code.includes('@/')) {
+            code = code.replace(/(from\s+|import\(\s*)(["'])@\//g, '$1$2/src/');
+            changed = true;
+          }
+
+          // b) Rewrite ALL bare specifiers to esm.sh CDN URLs.
+          //    Bare specifiers: don't start with /, ./, ../, http://, https://, data:
+          //    React/react-dom get pinned versions; everything else goes to esm.sh
+          //    with deps=react@18.2.0 to ensure consistent React singleton.
+          const PINNED = {
+            'react/jsx-runtime': 'https://esm.sh/react@18.2.0?dev&exports=jsx,jsxs,Fragment/jsx-runtime',
+            'react/jsx-dev-runtime': 'https://esm.sh/react@18.2.0?dev/jsx-dev-runtime',
+            'react-dom/client': 'https://esm.sh/react-dom@18.2.0?dev&deps=react@18.2.0/client',
+            'react-dom': 'https://esm.sh/react-dom@18.2.0?dev&deps=react@18.2.0',
+            'react': 'https://esm.sh/react@18.2.0?dev',
+          };
+          // Match: from "bare-specifier" or import("bare-specifier")
+          // Bare = starts with a letter, @, or digit (not . / http data)
+          code = code.replace(
+            /(from\s+|import\(\s*)(["'])((?![./]|https?:\/\/|data:)[a-zA-Z@\d][^"']*)\2/g,
+            (match, prefix, quote, specifier) => {
+              // Check pinned versions first (longest prefix match)
+              for (const [key, url] of Object.entries(PINNED)) {
+                if (specifier === key || specifier.startsWith(key + '/')) {
+                  const rest = specifier.slice(key.length);
+                  return `${prefix}${quote}${url}${rest}${quote}`;
+                }
+              }
+              // Generic npm package → esm.sh with react dep for compatibility
+              const esmUrl = `https://esm.sh/${specifier}?deps=react@18.2.0`;
+              return `${prefix}${quote}${esmUrl}${quote}`;
+            }
+          );
+          changed = true; // Always mark changed since we ran the replace
+          if (changed) {
+            const newBody = Buffer.from(code);
+            resp = { ...resp, body: newBody, headers: { ...resp.headers, 'Content-Length': String(newBody.length) } };
+          }
+        }
+
+        // 3. HTML: reorder import map before module scripts + rewrite preamble esm.sh URLs
+        if (resp.statusCode === 200 && ct.includes('html') && resp.body) {
+          let html = resp.body.toString('utf-8');
+          let htmlChanged = false;
+
+          // Move import map before any <script type="module">
+          const importMapRe = /<script\s+type="importmap">[\s\S]*?<\/script>/;
+          const mapMatch = html.match(importMapRe);
+          if (mapMatch) {
+            html = html.replace(mapMatch[0], '');
+            html = html.replace(/<head[^>]*>/, `$&\n${mapMatch[0]}`);
+            htmlChanged = true;
+          }
+
+          // Inject Tailwind CSS CDN play script for runtime class processing
+          if (!html.includes('cdn.tailwindcss.com')) {
+            html = html.replace(/<head[^>]*>/, `$&\n<script src="https://cdn.tailwindcss.com"><\/script>`);
+            htmlChanged = true;
+          }
+
+          if (htmlChanged) {
+            const newBody = Buffer.from(html);
+            resp = { ...resp, body: newBody, headers: { ...resp.headers, 'Content-Length': String(newBody.length) } };
+          }
+        }
+
+        return resp;
+      };
+
+      bridge.registerServer(viteServer, port);
+      viteServer.start();
+
+      const url = bridge.getServerUrl(port);
+
+      sendToParent({
+        type: 'devServerReady',
+        id: data.id,
+        url
+      });
+    } catch (err) {
+      console.error('[Sandbox] Dev server start failed:', err);
+      sendToParent({
+        type: 'devServerError',
+        id: data.id,
+        error: String(err)
+      });
+    }
+  }
+
+  function handleStopDevServer(data) {
+    if (viteServer) {
+      viteServer.stop();
+      bridge.unregisterServer(data.port || 5173);
+      viteServer = null;
+    }
+  }
+
+  function handleSyncFile(data) {
+    if (!vfs) return;
+
+    if (data.content === null || data.content === undefined) {
+      // Delete file
+      try {
+        vfs.unlinkSync(data.path);
+      } catch {
+        // File may not exist, ignore
+      }
+    } else {
+      // Write/update file
+      vfs.writeFileSync(data.path, data.content);
+    }
+  }
+
+  window.addEventListener('message', (event) => {
+    const { type, ...data } = event.data || {};
+    if (type) console.log('[Sandbox] Received message:', type);
+
+    switch (type) {
+      case 'init':
+        handleInit(data);
+        break;
+      case 'startDevServer':
+        handleStartDevServer(data);
+        break;
+      case 'stopDevServer':
+        handleStopDevServer(data);
+        break;
+      case 'syncFile':
+        handleSyncFile(data);
+        break;
+    }
+  });
+
+  // Pre-register SW early so it's ready by the time 'init' arrives.
+  // This runs in the background — if it hangs (cross-origin iframe issue),
+  // handleInit's fast path will work because an old SW is already controlling.
+  if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
+    navigator.serviceWorker.register('/__sw__.js', { scope: '/' }).catch(err => {
+      console.warn('[Sandbox] Early SW registration failed:', err);
+    });
+  }
+
+  // Signal to parent that sandbox is ready to receive messages
+  console.log('[Sandbox] Ready');
+  sendToParent({ type: 'ready' });
+</script>
+</body>
+</html>

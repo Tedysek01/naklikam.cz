@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sparkles icon only - main star -->
+  <defs>
+    <linearGradient id="sparkleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <path d="M16 4L18.5 13.5L28 16L18.5 18.5L16 28L13.5 18.5L4 16L13.5 13.5L16 4Z" 
+        fill="url(#sparkleGradient)"/>
+  
+  <!-- Small accent stars -->
+  <path d="M26 8L27 10.5L29.5 11.5L27 12.5L26 15L25 12.5L22.5 11.5L25 10.5L26 8Z" 
+        fill="url(#sparkleGradient)" fill-opacity="0.8"/>
+  
+  <path d="M6 22L7 24.5L9.5 25.5L7 26.5L6 29L5 26.5L2.5 25.5L5 24.5L6 22Z" 
+        fill="url(#sparkleGradient)" fill-opacity="0.7"/>
+</svg>

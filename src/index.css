@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Naklikam.cz - Tmavý růžový theme */
+:root {
+  /* Tmavé pozadí jako výchozí */
+  --background: 217 32% 6%; /* Velmi tmavá šedá */
+  --foreground: 332 81% 94%; /* Světle růžová pro text */
+  --card: 217 32% 8%; /* Trochu světlejší než pozadí */
+  --card-foreground: 332 81% 94%;
+  --primary: 330 81% 60%; /* Růžová primární */
+  --primary-foreground: 217 32% 6%; /* Tmavý text na růžové */
+  --secondary: 260 34% 24%; /* Fialovo-šedá sekundární */
+  --secondary-foreground: 332 81% 94%;
+  --muted: 217 32% 12%; /* Tlumená šedá */
+  --muted-foreground: 330 25% 70%; /* Tlumená růžová */
+  --accent: 330 81% 60%; /* Akcent stejný jako primární */
+  --accent-foreground: 217 32% 6%;
+  --border: 217 32% 18%; /* Hranice */
+  --input: 217 32% 12%; /* Input pozadí */
+  --ring: 330 81% 60%; /* Focus ring růžový */
+  
+  /* Gradient proměnné */
+  --gradient-primary: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  --gradient-secondary: linear-gradient(135deg, #be185d 0%, #7c3aed 100%);
+}
+
+
+* {
+  border-color: hsl(var(--border));
+}
+
+/* Custom Scrollbars for Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+  border-radius: 4px;
+  border: 1px solid hsl(var(--border));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #be185d 0%, #7c3aed 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: hsl(var(--muted));
+}
+
+/* Firefox Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ec4899 hsl(var(--muted));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-fade-in-out {
+  animation: fade-in-out 3s ease-in-out infinite;
+}
+
+/* Click animation */
+@keyframes click {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.95) rotate(-5deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  75% {
+    transform: scale(0.98) rotate(-2deg);
+  }
+}
+
+.animate-click {
+  animation: click 2s ease-in-out infinite;
+}
+
+/* Gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 100%);
+}

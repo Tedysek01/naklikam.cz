@@ -1,0 +1,187 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        request.auth.token.email in ['admin@naklikam.cz'];
+    }
+    
+    function isBackendService() {
+      // TEMPORARY: Allow backend service access when Firebase is not fully configured
+      // Backend requests have no auth context but are legitimate API calls
+      return request.auth == null;
+    }
+    
+    function isProjectOwner(projectId) {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/projects/$(projectId)) &&
+        get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid;
+    }
+    
+    // Users collection - users can only read/write their own data
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isBackendService() || isAdmin();
+      allow write: if isOwner(userId) || isBackendService();
+      
+      // Subscription subcollection
+      match /subscription/{subscriptionId} {
+        allow read: if isOwner(userId) || isBackendService();
+        // Allow creation of free plan subscription during registration or downgrade
+        allow create: if isOwner(userId) && 
+          request.resource.data.plan == 'free' &&
+          request.resource.data.tokensUsed == 0 &&
+          request.resource.data.tokens == 70000 &&
+          request.resource.data.tokensLimit == 70000;
+        // Allow overwriting existing subscription with free plan
+        allow write: if isOwner(userId) && 
+          request.resource.data.plan == 'free' &&
+          request.resource.data.tokensUsed == 0 &&
+          request.resource.data.tokens == 70000 &&
+          request.resource.data.tokensLimit == 70000;
+        // Allow updates but validate token changes
+        allow update: if isOwner(userId) && 
+          // Can only increase tokensUsed (not decrease)
+          request.resource.data.tokensUsed >= resource.data.tokensUsed &&
+          // Cannot change other fields
+          request.resource.data.plan == resource.data.plan &&
+          request.resource.data.tokens == resource.data.tokens &&
+          request.resource.data.tokensLimit == resource.data.tokensLimit &&
+          // Must update timestamp
+          request.resource.data.updatedAt == request.time;
+        // Only backend can delete
+        allow delete: if false;
+      }
+      
+      // Usage tracking subcollection
+      match /usage/{document=**} {
+        allow read: if isOwner(userId);
+        allow write: if isOwner(userId);
+      }
+      
+      // Generated content subcollection
+      match /generatedContent/{contentId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId) && 
+          // Validate required fields
+          request.resource.data.keys().hasAll(['userId', 'type', 'subType', 'title', 'content', 'prompt', 'metadata', 'settings']) &&
+          // Ensure userId matches
+          request.resource.data.userId == userId &&
+          // Validate content type
+          request.resource.data.type in ['text', 'image', 'video'] &&
+          // Validate metadata has required fields
+          request.resource.data.metadata.keys().hasAll(['credits', 'generatedAt']) &&
+          // Validate settings has required fields
+          request.resource.data.settings.keys().hasAll(['canEdit', 'canDownload', 'canShare']);
+        // Users can delete their own content
+        allow delete: if isOwner(userId);
+        // No updates allowed - content is immutable once created
+        allow update: if false;
+      }
+    }
+    
+    // Projects collection
+    match /projects/{projectId} {
+      // Users can read their own projects or public projects, admins can read all
+      allow read: if isAuthenticated() && 
+        (resource.data.ownerId == request.auth.uid || resource.data.isPublic == true || isAdmin());
+      
+      // Users can create new projects
+      allow create: if isAuthenticated() && 
+        request.resource.data.ownerId == request.auth.uid;
+      
+      // Only project owners can update or delete (admins can also)
+      allow update: if isProjectOwner(projectId) || isAdmin();
+      allow delete: if isProjectOwner(projectId) || isAdmin();
+      
+      // Files subcollection
+      match /files/{fileId} {
+        // Same permissions as parent project
+        allow read: if isAuthenticated() && 
+          (get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid || 
+           get(/databases/$(database)/documents/projects/$(projectId)).data.isPublic == true || isAdmin());
+        allow write: if isProjectOwner(projectId) || isAdmin();
+      }
+    }
+    
+    // Top-level subscriptions collection (for analytics)
+    match /subscriptions/{subscriptionId} {
+      allow read: if isAdmin() || (isAuthenticated() && resource.data.userId == request.auth.uid);
+      allow write: if isBackendService(); // Only backend can write
+    }
+    
+    // Payments collection (admin only for analytics)
+    match /payments/{paymentId} {
+      allow read: if isAdmin();
+      allow write: if isBackendService(); // Only backend can write
+    }
+    
+    // User tokens collection (admin analytics)
+    match /userTokens/{userId} {
+      allow read: if isAdmin() || isOwner(userId);
+      allow write: if isBackendService();
+    }
+    
+    // Allow admins to read all users for analytics
+    match /users/{document=**} {
+      allow read: if isAdmin();
+    }
+
+    // Chat sessions
+    match /chatSessions/{sessionId} {
+      // Helper function to check if user owns the project
+      function ownsProjectForSession() {
+        let projectId = resource.data.projectId;
+        return isAuthenticated() && 
+          exists(/databases/$(database)/documents/projects/$(projectId)) &&
+          get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid;
+      }
+      
+      function ownsProjectForNewSession() {
+        let projectId = request.resource.data.projectId;
+        return isAuthenticated() && 
+          exists(/databases/$(database)/documents/projects/$(projectId)) &&
+          get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid;
+      }
+      
+      // Users can only access chat sessions for their projects, admins can access all
+      allow read: if ownsProjectForSession() || isAdmin();
+      
+      // Users can create chat sessions for their projects, admins can create for any project
+      allow create: if ownsProjectForNewSession() || isAdmin();
+      
+      // Chat sessions cannot be updated or deleted
+      allow update: if false;
+      allow delete: if false;
+      
+      // Messages subcollection
+      match /messages/{messageId} {
+        // Helper to check project ownership through parent session
+        function ownsProjectThroughSession() {
+          let session = get(/databases/$(database)/documents/chatSessions/$(sessionId));
+          let projectId = session.data.projectId;
+          return isAuthenticated() && 
+            exists(/databases/$(database)/documents/projects/$(projectId)) &&
+            get(/databases/$(database)/documents/projects/$(projectId)).data.ownerId == request.auth.uid;
+        }
+        
+        // Same permissions as parent session, admins can access all
+        allow read: if ownsProjectThroughSession() || isAdmin();
+        allow create: if ownsProjectThroughSession() || isAdmin();
+        
+        // Messages cannot be updated or deleted
+        allow update: if false;
+        allow delete: if false;
+      }
+    }
+  }
+}

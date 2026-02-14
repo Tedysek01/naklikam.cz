@@ -1,0 +1,21 @@
+{
+  "totalUrls": 2185,
+  "staticPages": 6,
+  "programmaticPages": 2179,
+  "byType": {
+    "profession-city-landing": 1910,
+    "city-landing": 60,
+    "profession-template": 68,
+    "profession-examples": 68,
+    "how-to-guide": 68,
+    "competitor-comparison": 5
+  },
+  "byPriority": {
+    "high": 265,
+    "medium": 1823,
+    "medium-low": 29,
+    "low": 62
+  },
+  "estimatedCrawlTime": "37 hodin",
+  "fileSize": "~321 KB"
+}

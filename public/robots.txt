@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://naklikam.cz/sitemap.xml
+Sitemap: https://naklikam.cz/sitemap-index.xml
+
+# Rychlost crawlingu
+Crawl-delay: 1
+
+# Blokované cesty (pokud nějaké máme)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /static/
+
+# Povolené pro SEO
+Allow: /web-pro-*
+Allow: /tvorba-webu-*
+Allow: /templates/*
+Allow: /examples/*
+Allow: /jak-udelat-web-pro-*
+Allow: /alternativa-k-*
